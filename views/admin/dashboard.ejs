@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Admin Blog</title>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+	<div class="container">
+
+		<div class="header">
+			<h1>Admin Blog</h1>
+			<div class="header-btn">
+				<a href="/" class="btn">Home</a>
+				<a href="/admin/new" class="btn">+ New Article</a>
+			</div>
+		</div>
+
+		<% if (articles.length===0) { %>
+		<p>No articles yet.</p>
+		<% } else { %>
+
+		<% articles.forEach(article=> { %>
+		<div class="card">
+
+			<div class="article-row">
+
+				<div class="article-info">
+					<h2>
+						<%= article.title %>
+					</h2>
+					<p>
+						<%= article.date %>
+					</p>
+				</div>
+
+				<div class="actions">
+					<a href="/admin/edit/<%= article.id %>" class="edit">Edit</a>
+					<a href="/admin/delete/<%= article.id %>" class="delete" onclick="return confirm('Delete this article?')">
+						Delete
+					</a>
+				</div>
+
+			</div>
+
+		</div>
+		<% }) %>
+
+		<% } %>
+
+	</div>
+
+</body>
+
+</html>

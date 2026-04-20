@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Home Blog</title>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="header">
+			<h1>Home Blog</h1>
+			<a href="/admin" class="btn">Admin</a>
+		</div>
+
+		<% if (articles.length===0) { %>
+		<p>No articles yet.</p>
+		<% } else { %>
+		<% articles.forEach(article=> { %>
+		<div class="card">
+			<h2>
+				<a href="/article/<%= article.id %>">
+					<%= article.title %>
+				</a>
+			</h2>
+			<p>
+				<%= article.date %>
+			</p>
+			<p>
+				<%= article.content.substring(0, 120) %>...
+			</p>
+		</div>
+		<% }) %>
+		<% } %>
+	</div>
+
+</body>
+
+</html>

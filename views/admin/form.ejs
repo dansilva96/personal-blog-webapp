@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		<%= article ? 'Update' : 'New' %> Article
+	</title>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+	<div class="container">
+
+		<div class="header">
+			<h1>Admin Blog</h1>
+			<a href="/admin" class="btn">Back</a>
+		</div>
+
+		<div class="form-card">
+			<h1>
+				<%= article ? 'Update Article' : 'New Article' %>
+			</h1>
+
+			<form method="POST" action="<%= article ? '/admin/edit/' + article.id : '/admin/new' %>">
+
+				<input type="text" name="title" placeholder="Article title" value="<%= article ? article.title : '' %>" required>
+
+				<input type="date" name="date" value="<%= article ? article.date : '' %>" required>
+
+				<textarea name="content" placeholder="Write your article..." required><%= article ? article.content : '' %></textarea>
+
+				<button type="submit">
+					<%= article ? 'Update' : 'Publish' %>
+				</button>
+
+			</form>
+		</div>
+
+	</div>
+
+</body>
+
+</html>

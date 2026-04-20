@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		<%= article.title %>
+	</title>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+	<div class="container">
+
+		<div class="header">
+			<h1>Home Blog</h1>
+			<a href="/" class="btn">Back</a>
+		</div>
+
+		<div class="card">
+
+			<h1>
+				<%= article.title %>
+			</h1>
+
+			<p>
+				<%= article.date %>
+			</p>
+
+			<hr>
+
+			<p>
+				<%= article.content %>
+			</p>
+
+		</div>
+
+	</div>
+
+</body>
+
+</html>
