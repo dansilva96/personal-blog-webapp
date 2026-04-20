@@ -58,8 +58,6 @@ project-root/
 │   ├── auth.js
 │
 ├── data-articles
-│   ├── 1.json
-│   ├── 2.json
 │
 ├── views/
 │   ├── admin/
@@ -98,7 +96,7 @@ npm install
 3. Run the application:
 
 ```bash
-node app.js
+npm start
 ```
 
 4. Open in browser:
